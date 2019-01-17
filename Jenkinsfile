@@ -126,7 +126,7 @@ node('master') {
 			        changeNote += (i + 1) + ". " + "${entry.msg}" + "\n"
 			    }
 			}
-			echo changeNotesdd
+			echo changeNote
 			/*env.RADXA_CHANGE = changeNote
 			sh '''#!/bin/bash
 				set -xe
