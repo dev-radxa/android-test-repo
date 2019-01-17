@@ -152,7 +152,7 @@ node('master') {
 	            #        --name "$(basename "$file")" \
 	            #        --file "$file" &
               	#done
-              	wait
+              	#wait
                 github-release edit \
                   --tag "${tag}" \
                   --name "${tag}" \
