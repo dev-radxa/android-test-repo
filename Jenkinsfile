@@ -120,14 +120,16 @@ node('master') {
 			String changeNote = ""
 			if(currentBuild.changeSets != null){
 				for (def logs : currentBuild.changeSets) {
+					echo "waimian"
 				    def entries = logs.items
 				    for (int i = 0; i < entries.length; i++) {
+				    	echo "limian"
 				        def entry = entries[i]
 				        changeNote += i + ". " + "${entry.msg}" + "\n"
 				    }
 				}
 			}
-			env.RADXA_CHANGE = changeNote
+			/*env.RADXA_CHANGE = changeNote
 			sh '''#!/bin/bash
 				set -xe
                 shopt -s nullglob
@@ -157,7 +159,7 @@ node('master') {
                   --tag "${tag}" \
                   --name "${tag}" \
                   --description "${RADXA_CHANGE}"
-			'''
+			'''*/
 
 
 			/*script {
