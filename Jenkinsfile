@@ -31,7 +31,7 @@ node('master') {
 
     environment.inside {
 		stage('repo') {
-	        repoSync(true, true, "https://github.com/radxa/rockpi4-android-tv-7.1.git", "master", "rockchip_tv_nougat_release.xml")
+	        repoSync(true, true, "https://github.com/dev-radxa/android-test-repo.", "master", "rockchip_tv_nougat_release.xml")
 		}
 		/*
 	    stage('uboot'){
