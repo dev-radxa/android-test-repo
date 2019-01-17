@@ -119,16 +119,14 @@ node('master') {
 		stage('release'){
 			String changeNote = ""
 			if(currentBuild.changeSets != null){
-				for (def logs : currentBuild.changeSets) {
-					echo "waimian"
-				    def entries = logs.items
-				    for (int i = 0; i < entries.length; i++) {
-				    	echo "limian"
-				        def entry = entries[i]
-				        changeNote += i + ". " + "${entry.msg}" + "\n"
-				    }
-				}
+				def github = currentBuild.changeSets[0]
+				def entries = github.items
+			    for (int i = 0; i < entries.length; i++) {
+			        def entry = entries[i]
+			        changeNote += (i + 1) + ". " + "${entry.msg}" + "\n"
+			    }
 			}
+			echo changeNote
 			/*env.RADXA_CHANGE = changeNote
 			sh '''#!/bin/bash
 				set -xe
