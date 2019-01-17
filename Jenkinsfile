@@ -33,6 +33,7 @@ node('master') {
 		stage('repo') {
 	        repoSync(true, true, "https://github.com/radxa/rockpi4-android-tv-7.1.git", "master", "rockchip_tv_nougat_release.xml")
 		}
+		/*
 	    stage('uboot'){
 	    	sh '''#!/bin/bash
 	    		#uboot
@@ -114,7 +115,7 @@ node('master') {
 				    cp -f rockdev/Image/trust.img     $RADXA_RELEASE_DIR
 				done
 			'''
-		}
+		}*/
 		stage('release'){
 			String changeNote = ""
 			if(currentBuild.changeSets != null){
