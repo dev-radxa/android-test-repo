@@ -146,12 +146,12 @@ node('master') {
                   --name "manifest" \
                   --file "manifest.xml"
 
-				for file in $RADXA_RELEASE_DIR/*.tgz; do
-	                github-release upload \
-	                    --tag "${tag}" \
-	                    --name "$(basename "$file")" \
-	                    --file "$file" &
-              	done
+				#for file in $RADXA_RELEASE_DIR/*.tgz; do
+	            #    github-release upload \
+	            #        --tag "${tag}" \
+	            #        --name "$(basename "$file")" \
+	            #        --file "$file" &
+              	#done
               	wait
                 github-release edit \
                   --tag "${tag}" \
