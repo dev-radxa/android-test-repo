@@ -118,7 +118,7 @@ node('master') {
 		}*/
 		stage('release'){
 			String changeNote = ""
-			if(currentBuild.changeSets != null){
+			if(currentBuild.changeSets != null && currentBuild.changeSets.size() >= 1){
 				def github = currentBuild.changeSets[0]
 				def entries = github.items
 			    for (int i = 0; i < entries.length; i++) {
