@@ -117,7 +117,7 @@ node('master') {
 			'''
 		}*/
 		stage('release'){
-			String changeNote = ""sdas
+			String changeNote = ""
 			if(currentBuild.changeSets != null){
 				for (def logs : currentBuild.changeSets) {
 					echo "waimian"
