@@ -160,9 +160,9 @@ node('master') {
 			'''
 
 
-			script {
+			/*script {
 		        currentBuild.description = env.RADXA_RELEASE_TIME
-	    	}
+	    	}*/
 		}
     }
 }
